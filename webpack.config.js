@@ -4,8 +4,9 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const  cssnano  =  require ( "cssnano" ) ;
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const  cssnano  =  require ( "cssnano" );
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = env => {
   const isProduction = env.production === true;
@@ -32,11 +33,11 @@ module.exports = env => {
 
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin(),
       new MiniCssExtractPlugin({
         filename: "index.css"
       }),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new HtmlWebpackPlugin()
     ],
 
     module: {
@@ -100,6 +101,10 @@ module.exports = env => {
             }
           ]
         },
+        {
+          test: /\.html$/i,
+          loader: 'html-loader', 
+        }
       ]
     }
 
