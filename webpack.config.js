@@ -1,9 +1,11 @@
 const webpack = require("webpack");
+const fs = require('fs');
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const  cssnano  =  require ( "cssnano" ) ;
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = env => {
   const isProduction = env.production === true;
@@ -30,6 +32,7 @@ module.exports = env => {
 
     plugins: [
       new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin(),
       new MiniCssExtractPlugin({
         filename: "index.css"
       }),
@@ -80,23 +83,6 @@ module.exports = env => {
               options: {
                 sourceMap: true
               }
-            }
-          ]
-        },
-        {
-          test: /\.pug$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                publicPath: (url, resourcePath, context) => {
-                  return `${context}/dist`
-                }
-              }
-            },
-            {
-              loader: "pug-loader"
             }
           ]
         },
