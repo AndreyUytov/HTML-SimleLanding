@@ -119,20 +119,20 @@ module.exports = env => {
             }
           ]
         },
-        // {
-        //   test: /\.(png|jpe?g|gif|woff|woff2|svg|webp)$/,
-        //   use: [
-        //     {
-        //       loader: "file-loader",
-        //       options: {
-        //         name: "[path][name].[ext]",
-        //         publicPath: (url, resourcePath, context) => {
-        //           return `./${url}`
-        //         }
-        //       }
-        //     }
-        //   ]
-        // },
+        {
+          test: /\.(png|jpe?g|gif|woff|woff2|svg|webp)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[path][name].[ext]",
+                publicPath: (url, resourcePath, context) => {
+                  return `./${url}`
+                }
+              }
+            }
+          ]
+        },
         {
           test: /\.html$/i,
           include: path.resolve(__dirname, 'src/pages/includes'),
