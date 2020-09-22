@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const  cssnano  =  require ( "cssnano" );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin= require('copy-webpack-plugin');
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -35,7 +36,7 @@ module.exports = env => {
     output: {
       path: path.join(__dirname, "dist"),
       publicPath: "/",
-      filename: "[name].js",
+      filename: "js/index.js",
     },
 
     devtool: isProduction ? "source-map" : "inline-source-map",
@@ -50,8 +51,23 @@ module.exports = env => {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: "index.css"
+        filename: "css/index.css"
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+        // {
+        // from: './src/fonts',
+        // to: './fonts'
+        // },
+        // {
+        //   from: './src/favicon',
+        //   to: './favicon'
+        // },
+        {
+          from: './src/html-images',
+          to: './img'
+        }
+    ]}),
       new webpack.HotModuleReplacementPlugin(),
       ...htmlPlugins
     ],
@@ -103,26 +119,29 @@ module.exports = env => {
             }
           ]
         },
-        {
-          test: /\.(png|jpe?g|gif|woff|woff2|svg|webp)$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[path][name].[ext]",
-                publicPath: (url, resourcePath, context) => {
-                  return `./${url}`
-                }
-              }
-            }
-          ]
-        },
+        // {
+        //   test: /\.(png|jpe?g|gif|woff|woff2|svg|webp)$/,
+        //   use: [
+        //     {
+        //       loader: "file-loader",
+        //       options: {
+        //         name: "[path][name].[ext]",
+        //         publicPath: (url, resourcePath, context) => {
+        //           return `./${url}`
+        //         }
+        //       }
+        //     }
+        //   ]
+        // },
         {
           test: /\.html$/i,
           include: path.resolve(__dirname, 'src/pages/includes'),
           use: [
             {
-              loader: "html-loader"
+              loader: "html-loader",
+              options: {
+                attributes: false,
+              },
             }
           ]
         }
