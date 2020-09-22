@@ -6,7 +6,22 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const  cssnano  =  require ( "cssnano" );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      inject: false,
+    })
+  })
+}
+
+const htmlPlugins = generateHtmlPlugins('./src/pages/views')
 
 module.exports = env => {
   const isProduction = env.production === true;
@@ -14,7 +29,8 @@ module.exports = env => {
   return {
     mode: isProduction ? "production" : "development",
     entry: {
-      index: './src/index.js'
+      index: './src/index.js',
+      styles: './src/styles/index.scss'
     },
     output: {
       path: path.join(__dirname, "dist"),
@@ -37,7 +53,7 @@ module.exports = env => {
         filename: "index.css"
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new HtmlWebpackPlugin()
+      ...htmlPlugins
     ],
 
     module: {
@@ -103,7 +119,12 @@ module.exports = env => {
         },
         {
           test: /\.html$/i,
-          loader: 'html-loader', 
+          include: path.resolve(__dirname, 'src/pages/includes'),
+          use: [
+            {
+              loader: "html-loader"
+            }
+          ]
         }
       ]
     }
