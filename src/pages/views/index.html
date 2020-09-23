@@ -1,10 +1,100 @@
 <%= _.template(require('./../includes/header.html'))() %>
 
-<p> TEXT</p>
-<p>AGAIN TEXT!</p>
-<p>Работает))</p>
-<p class="back"> gggg</p>
-<img src="./img/3-nav.png" />
+<main class="main">
+  <h1 class="main__title">Denis Novik</h1>
+  <section class="section-profile content">
+    <h4 class="section-profile__title">UX | UI designer</h4>
+    <p class="section-profile__description">24 years old, Minsk</p>
+    <img src='./img/profile.png' width="943" height="387" />
+  </section>
+
+  <section class="section-about">
+    <div class="section__wrapper content">
+      <h2 class="section-about__title section-title">
+        About me
+      </h2>
+      <p class="section-about__description section-description">Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it</p>
+      <p class="section-about__description section-description">I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
+      <p class="section-about__description section-description">Ready to implement excellent projects with wonderful people.</p>
+    </div>
+  </section>
+
+  <section class="section-skills">
+    <h2 class="section-skills__title section-title">Skills</h2>
+    <p class="section-skills__description section-description">I work in such programs as</p>
+    <ul class="section-skills__list list">
+
+      <li class="section-skills__item">
+       <figure class="section-skills__figure">
+        <img class="section-skills__img" src="./img/photoshop.png" />
+        <figcaption class="section-skills__figcaption">Adobe Photoshop</figcaption>
+       </figure>
+       <div class="section-skills__stars">svg-injection stars</div>
+      </li>
+
+       <li class="section-skills__item">
+        <figure class="section-skills__figure">
+         <img class="section-skills__img" src="./img/ai.png" />
+         <figcaption class="section-skills__figcaption">Adobe Illustrator</figcaption>
+        </figure>
+        <div class="section-skills__stars">svg-injection stars</div>
+       </li>
+
+       <li class="section-skills__item">
+        <figure class="section-skills__figure">
+         <img class="section-skills__img" src="./img/ae.png" />
+         <figcaption class="section-skills__figcaption">Adobe After Effects</figcaption>
+        </figure>
+        <div class="section-skills__stars">svg-injection stars</div>
+       </li>
+
+       <li class="section-skills__item">
+        <figure class="section-skills__figure">
+         <img class="section-skills__img" src="./img/figma.png" />
+         <figcaption class="section-skills__figcaption">Figma</figcaption>
+        </figure>
+        <div class="section-skills__stars">svg-injection stars</div>
+       </li>
+
+    </ul>
+  </section>
+
+  <section class="section-portfolio">
+    <div class="wrapper-section content">
+      <h2 class="section-portfolio__title section-title">Portfolio</h2>
+      <ul class="section-portfolio__list list">
+        <li class="section-portfolio__item">
+          <figure class="section-portfolio__figure">
+            <img class="section-portfolio__img" src="./img/fashion.png" />
+            <figcaption class="section-portfolio__figcaption">Online fashion store - Homepage</figcaption>
+          </figure>
+        </li>
+
+        <li class="section-portfolio__item">
+          <figure class="section-portfolio__figure">
+            <img class="section-portfolio__img" src="./img/reebok.png" />
+            <figcaption class="section-portfolio__figcaption">Reebok Store - Concept</figcaption>
+          </figure>
+        </li>
+
+        <li class="section-portfolio__item">
+          <figure class="section-portfolio__figure">
+            <img class="section-portfolio__img" src="./img/braun.png" />
+            <figcaption class="section-portfolio__figcaption">Braun Landing Page - Concept</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-contacts content">
+    <h2 class="section-contacts__title section__title">Contacts</h2>
+    <p class="section-description">
+      Want to know more or just chat? You are welcome!
+    </p>
+    <a href="#" class="section-contacts__button btn">Send message</a>
+  </section>
+</main>
 
 
 <%= _.template(require('./../includes/footer.html'))() %>
