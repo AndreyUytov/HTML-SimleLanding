@@ -125,10 +125,8 @@ module.exports = env => {
             {
               loader: "file-loader",
               options: {
-                name: "[path][name].[ext]",
-                publicPath: (url, resourcePath, context) => {
-                  return `./${url}`
-                }
+                name: "[name].[ext]",
+                outputPath: './img'
               }
             }
           ]
@@ -138,10 +136,7 @@ module.exports = env => {
           include: path.resolve(__dirname, 'src/pages/includes'),
           use: [
             {
-              loader: "html-loader",
-              options: {
-                attributes: false,
-              },
+              loader: "html-loader"
             }
           ]
         }
