@@ -1,0 +1,146 @@
+.header {
+  position: relative;
+  margin-top: 90px;
+  padding-bottom: 55px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__snap {
+  position: relative;
+  width: 33px;
+  height: 22px;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  outline: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+  }
+}
+
+.header__snap--open {
+  margin-left: auto;
+}
+
+.header__snap--open::before {
+  top: 0px;
+  left: 0px;
+
+  width: 33px;
+  height: 4px;
+
+  background-color: black;
+
+  box-shadow: black 0px 8px,  black 0px 16px;
+}
+
+.header__snap--close {
+  &::before {
+    width: 27px;
+    height: 4px;
+
+    background-color: rgba(130, 130, 130, 1);
+
+    transform: rotate(45deg);
+  }
+  &::after {
+    width: 27px;
+    height: 4px;
+
+    background-color: rgba(130, 130, 130, 1);
+
+    transform: rotate(-45deg);
+  }
+}
+
+.hidden-menu {
+  display: flex;
+}
+
+.header__snap--open:not(.hidden-menu) ~ .header__snap--close {
+  display: flex;
+  margin-left: auto;
+}
+
+.hidden-menu ~ .main-nav {
+  display: none;
+}
+
+.main-nav__item {
+  &:not(:last-child) {
+    margin-bottom: 65px;
+  }
+  font-family: 'Gilroy-bold';
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color:rgba(130, 130, 130, 1);
+}
+
+.main-nav__item--active {
+  color: rgba(9, 9, 9, 1);
+
+}
+
+.main-nav__list {
+  margin-bottom: 150px;
+}
+
+.locale-list {
+  width: 100%;
+  margin-right: auto;
+  display: flex;
+  
+
+  transform: rotate(90deg);
+}
+
+.locale-item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  font-family: 'Gilroy-bold';
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+  
+  &--active {
+    color: #090909;
+  }
+}
+
+.locale-item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -15px;
+
+  width: 5px;
+  height: 30px;
+
+  background-color: #090909;
+  ;
+}

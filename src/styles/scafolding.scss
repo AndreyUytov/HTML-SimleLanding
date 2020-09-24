@@ -1,5 +1,7 @@
 a {
 	text-decoration: none;
+	color: inherit;
+	font: inherit;
 }
 
 img {
@@ -43,4 +45,16 @@ input[type="radio"].visually-hidden {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.content {
+	width: 316px;
+	margin: 0 auto;
 }

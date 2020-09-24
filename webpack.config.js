@@ -120,7 +120,7 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(png|jpe?g|gif|woff|woff2|svg|webp)$/,
+          test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|webp)$/,
           use: [
             {
               loader: "file-loader",
