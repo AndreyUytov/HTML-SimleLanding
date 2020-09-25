@@ -2,12 +2,16 @@
 
 <main class="main">
   <section class="section-profile content">
-    <h1 class="section-profile__title">Denis Novik</h1>
+    <h1 class="section-profile__title section-title">Denis Novik</h1>
     <div class="section-profile__wrapper">
-      <p class="section-profile__description">UX | UI designer</p>
-      <p class="section-profile__description">24 years old, Minsk</p>
+      <p class="section-profile__description section-description">UX | UI designer</p>
+      <p class="section-profile__description section-description">24 years old, Minsk</p>
     </div>
-    <img src='./img/profile.png' width="943" height="387" />
+    <picture>
+      <source srcset="./img/profile.png" media="(min-width: 996px)" >
+      <img src='./img/profile-mob.png' alt="photo" />
+    </picture>
+    
   </section>
 
   <section class="section-about">
@@ -21,7 +25,7 @@
     </div>
   </section>
 
-  <section class="section-skills">
+  <section class="section-skills content">
     <h2 class="section-skills__title section-title">Skills</h2>
     <p class="section-skills__description section-description">I work in such programs as</p>
     <ul class="section-skills__list list">
@@ -31,7 +35,15 @@
         <img class="section-skills__img" src="./img/photoshop.png" />
         <figcaption class="section-skills__figcaption">Adobe Photoshop</figcaption>
        </figure>
-       <div class="section-skills__stars">svg-injection stars</div>
+       <div class="section-skills__stars">
+         <svg class="section-skills__svg">
+           <use xlink:href="#full-star" />
+           <use x='30px' xlink:href="#full-star" />
+           <use x='60px' xlink:href="#full-star" />
+           <use x='90px' xlink:href="#full-star" />
+           <use x='120px' xlink:href="#empty-star" />
+         </svg>
+       </div>
       </li>
 
        <li class="section-skills__item">
@@ -39,7 +51,15 @@
          <img class="section-skills__img" src="./img/ai.png" />
          <figcaption class="section-skills__figcaption">Adobe Illustrator</figcaption>
         </figure>
-        <div class="section-skills__stars">svg-injection stars</div>
+        <div class="section-skills__stars">
+          <svg class="section-skills__svg">
+            <use xlink:href="#full-star" />
+            <use x='30px' xlink:href="#full-star" />
+            <use x='60px' xlink:href="#full-star" />
+            <use x='90px' xlink:href="#empty-star" />
+            <use x='120px' xlink:href="#empty-star" />
+          </svg>
+        </div>
        </li>
 
        <li class="section-skills__item">
@@ -47,7 +67,15 @@
          <img class="section-skills__img" src="./img/ae.png" />
          <figcaption class="section-skills__figcaption">Adobe After Effects</figcaption>
         </figure>
-        <div class="section-skills__stars">svg-injection stars</div>
+        <div class="section-skills__stars">
+          <svg class="section-skills__svg">
+            <use xlink:href="#full-star" />
+            <use x='30px' xlink:href="#full-star" />
+            <use x='60px' xlink:href="#full-star" />
+            <use x='90px' xlink:href="#full-star" />
+            <use x='120px' xlink:href="#empty-star" />
+          </svg>
+        </div>
        </li>
 
        <li class="section-skills__item">
@@ -55,7 +83,15 @@
          <img class="section-skills__img" src="./img/figma.png" />
          <figcaption class="section-skills__figcaption">Figma</figcaption>
         </figure>
-        <div class="section-skills__stars">svg-injection stars</div>
+        <div class="section-skills__stars">
+          <svg class="section-skills__svg">
+            <use xlink:href="#full-star" />
+            <use x='30px' xlink:href="#full-star" />
+            <use x='60px' xlink:href="#full-star" />
+            <use x='90px' xlink:href="#full-star" />
+            <use x='120px' xlink:href="#empty-star" />
+          </svg>
+        </div>
        </li>
 
     </ul>
@@ -67,22 +103,37 @@
       <ul class="section-portfolio__list list">
         <li class="section-portfolio__item">
           <figure class="section-portfolio__figure">
-            <img class="section-portfolio__img" src="./img/fashion.png" />
-            <figcaption class="section-portfolio__figcaption">Online fashion store - Homepage</figcaption>
+            <picture class="section-portfolio__img">
+              <source srcset="./img/fashion.png" media="(min-width: 996px)">
+                <img src="./img/fashion-mob.png" alt="portfolio" />
+            </picture>
+            <figcaption class="section-portfolio__figcaption">
+              <a href="#">Online fashion store - Homepage</a>
+            </figcaption>
           </figure>
         </li>
 
         <li class="section-portfolio__item">
           <figure class="section-portfolio__figure">
-            <img class="section-portfolio__img" src="./img/reebok.png" />
-            <figcaption class="section-portfolio__figcaption">Reebok Store - Concept</figcaption>
+            <picture class="section-portfolio__img">
+              <source srcset="./img/reebok.png" media="(min-width: 996px)">
+                <img src="./img/reebok-mob.png" alt="portfolio" />
+            </picture>
+            <figcaption class="section-portfolio__figcaption">
+              <a href="#">Reebok Store - Concept</a>
+            </figcaption>
           </figure>
         </li>
 
         <li class="section-portfolio__item">
           <figure class="section-portfolio__figure">
-            <img class="section-portfolio__img" src="./img/braun.png" />
-            <figcaption class="section-portfolio__figcaption">Braun Landing Page - Concept</figcaption>
+            <picture class="section-portfolio__img">
+              <source srcset="./img/braun.png" media="(min-width: 996px)">
+                <img src="./img/braun-mob.png" alt="portfolio" />
+            </picture>
+            <figcaption class="section-portfolio__figcaption">
+              <a href="#">Braun Landing Page - Concept</a>
+            </figcaption>
           </figure>
         </li>
       </ul>
@@ -91,7 +142,7 @@
 
   <section class="section-contacts content">
     <h2 class="section-contacts__title section__title">Contacts</h2>
-    <p class="section-description">
+    <p class="section-contacts__description section-description">
       Want to know more or just chat? You are welcome!
     </p>
     <a href="#" class="section-contacts__button btn">Send message</a>

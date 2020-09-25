@@ -1,0 +1,15 @@
+.section-about {
+  padding-bottom: 76px;
+  padding-top: 81px;
+  margin-bottom: 83px;
+
+  background: #F6F6F6;
+}
+
+.section-about__title {
+  margin-bottom: 30px;
+}
+
+.section-about__description:not(:last-child) {
+  margin-bottom: 30px;
+}

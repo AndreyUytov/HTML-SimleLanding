@@ -1,7 +1,6 @@
 .header {
   position: relative;
   margin-top: 90px;
-  padding-bottom: 55px;
 
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +81,10 @@
   display: none;
 }
 
+.main-nav {
+  margin-bottom: 300px;
+}
+
 .main-nav__item {
   &:not(:last-child) {
     margin-bottom: 65px;
@@ -100,16 +103,14 @@
 
 }
 
-.main-nav__list {
-  margin-bottom: 150px;
-}
-
 .locale-list {
-  width: 100%;
-  margin-right: auto;
+  position: absolute;
+  bottom: 55px;
+  right: 62px; // font-size(34) + padding-right(28) header
+  width: auto;
   display: flex;
   
-
+  transform-origin: bottom right;
   transform: rotate(90deg);
 }
 

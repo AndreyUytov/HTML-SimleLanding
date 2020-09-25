@@ -1,0 +1,31 @@
+.section-contacts {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-contacts__title {
+  margin-bottom: 27px;
+}
+
+.section-contacts__description {
+  width: 280px;
+  margin-bottom: 40px;
+}
+
+.section-contacts__button {
+  width: 316px;
+  height: 42px;
+
+  background: #000000;
+  border-radius: 50px;
+
+  font-family: 'Gilroy-bold';
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
