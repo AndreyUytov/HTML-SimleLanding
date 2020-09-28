@@ -143,5 +143,62 @@
   height: 30px;
 
   background-color: #090909;
-  ;
+}
+
+@media (min-width: 996px) {
+  .header__snap {
+    display: none;
+  }
+
+  .header .main-nav { // Для повышения специфичности добавлен .header
+    width: 100%;
+    margin-bottom: 135px;
+
+    display: flex;
+  }
+
+  .main-nav__list {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #828282;
+  }
+
+  .main-nav__item {
+    margin-bottom: 32px;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .locale-list {
+    bottom: 70px;
+    right: 30px;
+
+    transform: rotate(-90deg);  
+  }
+
+  .locale-item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .locale-item:not(:first-child)::before {
+    left: -5px;
+  
+    width: 2px;
+    height: 15px;
+  }
 }

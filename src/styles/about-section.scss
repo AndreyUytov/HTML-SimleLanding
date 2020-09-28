@@ -13,3 +13,22 @@
 .section-about__description:not(:last-child) {
   margin-bottom: 30px;
 }
+
+@media (min-width: 996px) {
+  .section-about {
+    margin-bottom: 91px;
+  }
+
+  .section__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-about__description {
+    width: 485px;
+
+    text-align: center;
+  }
+}

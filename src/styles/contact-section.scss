@@ -7,6 +7,7 @@
 }
 
 .section-contacts__title {
+  margin: 0;
   margin-bottom: 27px;
 }
 
@@ -28,4 +29,11 @@
   text-align: center;
 
   color: #FFFFFF;
+}
+
+@media (min-width: 996px) {
+  .section-contacts__button {
+    width: 167px;
+    height: 38px;
+  }
 }

@@ -46,3 +46,17 @@
   text-decoration-line: underline;
 }
 
+@media (min-width: 996px) {
+  .section-portfolio {
+    padding: 112px 0;
+    margin-bottom: 100px;
+  }
+
+  .section-portfolio__title {
+    margin-bottom: 47px;
+  }
+  
+  .section-portfolio__img {
+    margin-bottom: 45px;
+  }
+}
